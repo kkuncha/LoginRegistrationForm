@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>Login App</title>
+	<!-- style sheets -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" type="text/css">
+	<!-- <link rel="stylesheet" href="../css/style.css"> -->
+	<script src="../js/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<!-- angular -->
+	<!-- <script src="../js/angular.js"></script> -->
+	<script src="../js/angular.min.js"></script>
+	<script src="../js/angular-route.js"></script>
+	<script src="../js/angular-route.min.js"></script>
+	<!-- All other script files -->
+	<script src="../js/app.js"></script>
+	<script src="../js/controllers/formController.js"></script>
+	<script src="../js/controllers/homeController.js"></script>
+	<script src="../js/controllers/contactUsController.js"></script>
+</head>
+<body>	
+	<div ng-app="myApp" ng-controller="formController">
+		<div class="upperContent">	
+			<div class="listItem">
+			</div>
+			<div class="listItem" >
+				<div class="input-group searchBar">
+					<input type="text" class="form-control" placeholder="Search for...">
+				    <span class="input-group-btn">
+				    <button class="btn btn-primary barSearch" type="button">Search..!</button>
+				    </span>
+				</div> 
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div>
+			<nav>
+			
+				<a href="#/home"><b>Home</b></a>
+				<a href="#/contact"><b>Contact Us</b> </a>	
+		
+			</nav>			
+		</div>
+		<div class=container>
+			<div class="innerContainer listItem">
+				<div>
+					<h1>Registration Form</h1>
+				</div>
+				<div class="userForm">
+					<form name="userForm" novalidate ng-submit="submitForm()">
+						<div>
+							<label>First Name</label>
+							<input type="text" name="txtFirstName" class="form-control" required ng-min-length="5" ng-max-length="10" value="" ng-model="txtFirstName"/>
+							<p class="error" ng-show="userForm.txtFirstName.$error.required && submitted">First name should not be empty</p>
+							<p class="error" ng-show="userForm.txtFirstName.$error.minlength && submitted">The minimum length for first name is 5</p>
+							<p class="error" ng-show="userForm.txtFirstName.$error.maxlength && submitted">The minimum length for first name is 10</p>
+						</div>
+						<div>
+							<label>Last Name</label>
+							<input type="text" name="txtLastName" class="form-control" required value="" ng-model="txtLastName"/>
+							<p class="error" ng-show="userForm.txtLasttName.$error.required && submitted">Last name should not be empty</p>
+						</div>
+						<div>
+							<label>Age</label>
+							<input type="text" name="txtAge" class="form-control" required value="" ng-model="txtAge"/>
+							<p class="error" ng-show="userForm.txtAge.$error.required && submitted">Age should not be empty</p>
+							<p class="error" ng-show="submitted && ageError">Age should not be less than 18 and more than 30</p>
+						</div>
+						<div>
+							<label>Email</label>
+							<input type="email" name="txtEmail" class="form-control" required value="" ng-model="txtEmail">
+							<p class="error" ng-show="userForm.txtEmail.$error.required && submitted">Email should not be empty</p>
+							<p class="error" ng-show="userForm.txtEmail.$invalid && submitted">Invalid email</p>
+						</div>
+						<div>
+							<label>Gender</label>
+							<br/>
+							<label class="radio-inline">
+								<input type="radio" name="txtGender" ng-model="txtGender" value="male">Male
+							</label>
+							<label class="radio-inline">
+								<input type="radio" name="txtGender" ng-model="txtGender" value="female">Female
+							</label>
+						</div>
+						<br/>
+						<div>
+							<label>Languages</label>
+							<br/>
+							<label class="checked-inline">
+								<input type="checkbox" name="languages" ng-model="languages.english" value="english">English
+							</label>
+							<label class="checked-inline">
+								<input type="checkbox" name="languages" ng-model="languages.french" value="french">French
+							</label>
+							<label class="checked-inline">
+								<input type="checkbox" name="languages" ng-model="languages.spanish" value="spanish">Spanish
+							</label>
+						</div>
+						<br/>
+						<input type="submit" class="btn btn-primary" value="submit" />				
+					</form>
+				</div>
+			</div>
+			<div class="clear"></div>
+				<div class="list-group">
+				  <button type="button" class="list-group-item">Account setup</button>
+				  <button type="button" class="list-group-item">Account Information</button>
+				  <button type="button" class="list-group-item">Processing hierarchy</button>
+				  <button type="button" class="list-group-item">Reporting Hierarchy</button>
+				  <button type="button" class="list-group-item">Confirmation</button>
+				</div>
+		</div>	
+	</div>	
+</body>
+</html>

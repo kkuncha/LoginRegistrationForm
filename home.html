@@ -1,0 +1,8 @@
+<div>
+	<h4>Login Page</h4>
+	<label>Email</label>
+	<input type="email" name="txtEmail" class="form-control" required value="" ng-model="txtEmail">
+	<p class="error" ng-show="userForm.txtEmail.$error.required && submitted">Email should not be empty</p>
+	<p class="error" ng-show="userForm.txtEmail.$invalid && submitted">Invalid email</p>
+</div>
+<input type="submit" class="btn btn-default" value="Login" />

@@ -1,0 +1,38 @@
+@CHARSET "ISO-8859-1";
+*{
+	margin:0px;
+	padding:0px;
+	background-color:#ADEBFF;
+	color:#00004C;
+}
+.error{
+ color:red;
+}
+form{
+	width: 350px;
+}
+.searchBar{
+	width: 450px;
+	margin-left:100px;
+	padding:px;
+}
+
+.footerImage{
+	width: 350px;
+	height: 960px;
+}
+.listItem{
+	float: left;
+	
+}
+.clear{
+	clear: both;
+}
+.list-group-item{
+	color:#00004C;
+}
+.barSearch{
+	margin-left: 490px;
+}
+
+
